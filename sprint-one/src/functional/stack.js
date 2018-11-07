@@ -1,4 +1,5 @@
 var Stack = function() {
+  // Do not capitalize the maker function?
   var someInstance = {};
 
   // Use an object with numeric keys to store values
