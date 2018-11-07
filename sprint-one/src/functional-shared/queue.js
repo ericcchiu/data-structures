@@ -7,7 +7,7 @@ var Queue = function() {
   someInstance.first = 0; 
   someInstance.last = 0; 
   
-  // Extending object to include methods (delegation);
+  // Extending object to include methods (share);
   _.extend(someInstance, queueMethods);
 
 
