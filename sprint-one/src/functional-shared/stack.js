@@ -18,7 +18,8 @@ var Stack = function() {
 var stackMethods = {};
 stackMethods.push = function(value) {
   // Instantiate new property in stack
-  this.storage[this.count++] = value;
+  this.count++;
+  this.storage[this.count] = value;
 };
 
 stackMethods.pop = function() {
