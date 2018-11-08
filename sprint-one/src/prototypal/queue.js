@@ -1,6 +1,6 @@
 var Queue = function() {
   // Delegate object methods 
-  var someInstance = Object.create(Queue.prototype); 
+  var someInstance = Object.create(queueMethods); 
   
   // Set properties 
   someInstance.storage = {}; 
@@ -10,17 +10,14 @@ var Queue = function() {
   // Return obj
   return someInstance; 
 };
-
-var queueMethods = {}
-
+var queueMethods = {}; 
 // Add to the back of the queue
-Queue.queueMethods.enqueue = function(value) { 
-  this.last++; 
-  this.storage[this.last] = value; 
+queueMethods.enqueue = function(value) { 
+  this.storage[this.last++] = value; 
 };
 
 // Remove queue from front
-Queue.queueMethods.dequeue = function() { 
+queueMethods.dequeue = function() { 
   // Store removed property 
   var deletedProperty = this.storage[this.first]; 
   if (this.last - this.first > 0) { 
@@ -31,10 +28,10 @@ Queue.queueMethods.dequeue = function() {
   }
   // Return removed prop
   return deletedProperty; 
-}
+};
 
-Queue.queueMethods.size = function() { 
+queueMethods.size = function() { 
   // return size
   return this.last - this.first; 
-}
+};
 
