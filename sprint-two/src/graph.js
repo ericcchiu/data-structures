@@ -31,17 +31,17 @@ Graph.prototype.removeNode = function(node) {
 // Returns a boolean indicating whether two specified nodes are connected.  Pass in the values contained in each of the two nodes.
 Graph.prototype.hasEdge = function(fromNode, toNode) {
     // console.log('Inside hasEdge', this.[fromNode] === [toNode])
-  return (this.graphStructure[fromNode][toNode] && this.graphStructure[toNode][fromNode]) ? true : false;
+  return (this.graphStructure[fromNode].toNode && this.graphStructure[toNode][fromNode]) ? true : false;
 };
 
 // Connects two nodes in a graph by adding an edge between them.
 Graph.prototype.addEdge = function(fromNode, toNode) {
 // Trials: 
 //   this.edge = [fromNode, toNode];
-  this.graphStructure[fromNode][toNode] = true; 
+  this.graphStructure[fromNode].toNode = [toNode]; 
   this.graphStructure[toNode][fromNode] = true; 
 
-// console.log('This is the structure', this.graphStructure)
+console.log('This is the structure', this.graphStructure)
 
 };
 
