@@ -32,7 +32,7 @@ Graph.prototype.removeNode = function(node) {
 Graph.prototype.hasEdge = function(fromNode, toNode) {
     // console.log('Inside hasEdge', this.[fromNode] === [toNode])
     // console.table(this.storageStructure[fromNode].toNode);
-  if (this.storageStructure[fromNode][toNode] === undefined || this.storageStructure[toNode] === undefined) { 
+  if (!this.storageStructure[fromNode][toNode] || !this.storageStructure[toNode]) { 
     return false; 
   }
   return (this.storageStructure[fromNode][toNode] && this.storageStructure[toNode][fromNode]) ? true : false;
