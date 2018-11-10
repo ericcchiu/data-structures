@@ -7,8 +7,11 @@ var Set = function() {
 var setPrototype = {};
 
 setPrototype.add = function(item) {
-  // Push item to storage array 
-  this._storage.push(item);
+  if (!this.contains(item)) {
+
+    // Push item to storage array 
+    this._storage.push(item);
+  }
 };
 
 setPrototype.contains = function(item) {

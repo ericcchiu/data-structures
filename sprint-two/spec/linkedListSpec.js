@@ -23,6 +23,15 @@ describe('linkedList', function() {
     expect(linkedList.tail.value).to.equal(5);
   });
 
+  it('should not set the head to tail (circle of doom)', function() {
+    linkedList.addToTail(4);
+    linkedList.addToTail(5);
+    linkedList.addToTail(6); 
+    expect(linkedList.head.value).to.equal(4);
+    expect(linkedList.tail.value).to.not.equal(4);
+
+  });
+
   it('should remove the head from the list when removeHead is called', function() {
     linkedList.addToTail(4);
     linkedList.addToTail(5);
